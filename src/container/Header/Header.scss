@@ -197,5 +197,9 @@
 
   @media screen and (max-width: 1200px) {
     margin: 2rem 0;
+    img {
+      width: 75%;
+      margin: auto;
+    }
   }
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './About.scss';
 import { urlFor, client } from '../../client';
-import { AppWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { NAV } from '../../constants';
 
 const About = () => {
@@ -49,4 +49,8 @@ const About = () => {
   );
 };
 
-export default AppWrap(About, NAV.ABOUT);
+export default AppWrap(
+  MotionWrap(About, 'app__about'),
+  NAV.ABOUT,
+  'app__whitebg'
+);

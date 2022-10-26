@@ -5,6 +5,16 @@ import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 
 // Followed Bem Methodology for classNames
+
+const NAV_OPTIONS = [
+  NAV.HOME,
+  NAV.ABOUT,
+  NAV.WORK,
+  NAV.SKILLS,
+  NAV.TESTIMONIALS,
+  NAV.CONTACT,
+];
+
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
@@ -13,14 +23,12 @@ const Navbar = () => {
         <img src={images.logo} alt="logo"></img>
       </div>
       <ul className="app__navbar-links">
-        {[NAV.HOME, NAV.ABOUT, NAV.WORK, NAV.SKILLS, NAV.CONTACT].map(
-          (item) => (
-            <li className="app__flex p-text" key={`link-{item}`}>
-              <div />
-              <a href={`#${item}`}>{item}</a>
-            </li>
-          )
-        )}
+        {NAV_OPTIONS.map((item) => (
+          <li className="app__flex p-text" key={`link-{item}`}>
+            <div />
+            <a href={`#${item}`}>{item}</a>
+          </li>
+        ))}
       </ul>
 
       <div className="app__navbar-menu">
@@ -32,15 +40,13 @@ const Navbar = () => {
           >
             <HiX onClick={() => setToggle(false)}></HiX>
             <ul>
-              {[NAV.HOME, NAV.ABOUT, NAV.WORK, NAV.SKILLS, NAV.CONTACT].map(
-                (item) => (
-                  <li key={item}>
-                    <a onClick={() => setToggle(false)} href={`#${item}`}>
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              {NAV_OPTIONS.map((item) => (
+                <li key={item}>
+                  <a onClick={() => setToggle(false)} href={`#${item}`}>
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </motion.div>
         )}

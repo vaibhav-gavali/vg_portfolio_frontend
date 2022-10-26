@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ReactTooltip from 'react-tooltip';
-import { AppWrap } from '../../wrapper';
+
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import { NAV } from '../../constants';
 import './Skills.scss';
@@ -15,7 +16,6 @@ const Skills = () => {
     const skillsQuery = '*[_type == "skills"]';
 
     client.fetch(query).then((data) => {
-      console.log('experiences', data);
       setExperience(data);
     });
     client.fetch(skillsQuery).then((data) => {
@@ -87,4 +87,8 @@ const Skills = () => {
   );
 };
 
-export default AppWrap(Skills, NAV.SKILLS);
+export default AppWrap(
+  MotionWrap(Skills, 'app__skills'),
+  NAV.SKILLS,
+  'app__whitebg'
+);

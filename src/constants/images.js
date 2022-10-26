@@ -33,7 +33,7 @@ import bolt from '../assets/bolt.png';
 import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
-import profile_pic from '../assets/My_project.png';
+import profile_pic from '../assets/profile.png';
 
 export default {
   email,
